@@ -1,0 +1,77 @@
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("background.jpg"); /* Add your image path here */
+  background-size: cover; /* Cover the entire background */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  background-attachment: fixed; /* Fixed background */
+  background-position: center center; /* Center the image */
+}
+
+.header h1 {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 1em;
+}
+/* Section styling */
+section {
+  margin: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+/* Passenger details
+.passenger-info table {
+  width: 100%;
+  border: 1px solid black;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+}
+
+ Flight details 
+.flight-info {
+  display: flex;
+  justify-content: space-between;
+} */
+
+.depart,
+.arrive {
+  width: 45%;
+  padding: 10px;
+}
+
+/* Passenger details */
+.passenger-info {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Total fare */
+.total-fare p {
+  margin: 5px 0;
+}
+
+section[class="flight-details"] {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.home-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-decoration: none;
+  color: #000;
+}

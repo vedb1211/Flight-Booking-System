@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <title>Flight Booking</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="centered-text">Flight Booking</h1>
+      <div class="account-logo" id="account-dropdown">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYzrKwzB9qf6z1LUGt9CMjPzC5zBy87WL6Fw"
+          alt="Account"
+          id="account-icon"
+        />
+        <span class="account-text">Account</span>
+        <div class="dropdown-content" id="account-dropdown-content">
+          <a href="sign_in/">Sign In</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- <form id="booking-form" action="/get_flights/" method="post"> -->
+    <form id="booking-form" action="/flights/" method="post">
+      <div class="radio-buttons">
+        <input type="radio" name="class" id="Economy" value="Economy" checked />
+        <label for="one-way">Economy Class</label>
+        <input type="radio" name="class" id="Business" value="Business" />
+        <label for="round-trip" style="margin-left: 80px">Business Class</label>
+      </div>
+      <br />
+
+      <label for="Origin">Depart From:</label>
+      <input type="text" id="Origin" name="Origin" list="cityList" required />
+      <datalist id="cityList">
+        <option value="Delhi"></option>
+        <option value="Mumbai"></option>
+        <option value="Bangalore"></option>
+        <option value="Chennai"></option>
+        <option value="Kochi"></option>
+        <option value="Hyderabad"></option>
+        <option value="Trivandrum"></option>
+        <option value="Kolkata"></option>
+        <option value="Ahmedabad"></option>
+        <option value="Kozhikode"></option>
+        <option value="Jaipur"></option>
+        <option value="Goa"></option>
+        <option value="Lucknow"></option>
+        <option value="Coimbatore"></option>
+        <option value="Tiruchirappalli"></option>
+        <option value="Pune"></option>
+        <option value="Bagdogra"></option>
+        <option value="Guwahati"></option>
+        <option value="Visakhapatnam"></option>
+        <option value="Amritsar"></option>
+        <option value="Madurai"></option>
+        <option value="Nagpur"></option>
+        <option value="Chandigarh"></option>
+        <option value="Jammu"></option>
+        <option value="Srinagar"></option>
+        <option value="Mangalore"></option>
+        <option value="Port Blair"></option>
+        <option value="Indore"></option>
+        <option value="Agartala"></option>
+        <option value="Patna"></option>
+      </datalist>
+
+      <br />
+
+      <label for="Destination">Arrive At:</label>
+      <input
+        type="text"
+        id="Destination"
+        name="Destination"
+        list="cityList"
+        required
+      />
+      <datalist id="cityList">
+        <option value="Delhi"></option>
+        <option value="Mumbai"></option>
+        <option value="Bangalore"></option>
+        <option value="Chennai"></option>
+        <option value="Kochi"></option>
+        <option value="Hyderabad"></option>
+        <option value="Trivandrum"></option>
+        <option value="Kolkata"></option>
+        <option value="Ahmedabad"></option>
+        <option value="Kozhikode"></option>
+        <option value="Jaipur"></option>
+        <option value="Goa"></option>
+        <option value="Lucknow"></option>
+        <option value="Coimbatore"></option>
+        <option value="Tiruchirappalli"></option>
+        <option value="Pune"></option>
+        <option value="Bagdogra"></option>
+        <option value="Guwahati"></option>
+        <option value="Visakhapatnam"></option>
+        <option value="Amritsar"></option>
+        <option value="Madurai"></option>
+        <option value="Nagpur"></option>
+        <option value="Chandigarh"></option>
+        <option value="Jammu"></option>
+        <option value="Srinagar"></option>
+        <option value="Mangalore"></option>
+        <option value="Port Blair"></option>
+        <option value="Indore"></option>
+        <option value="Agartala"></option>
+        <option value="Patna"></option>
+      </datalist>
+
+      <br />
+
+      <label for="departure-date">Departure Date:</label>
+      <input
+        type="date"
+        id="departure-date"
+        name="departure-date"
+        required
+      /><br />
+
+      <input type="submit" id="book-tickets" value="Book Tickets" />
+    </form>
+
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

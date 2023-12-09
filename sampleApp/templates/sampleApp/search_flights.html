@@ -1,0 +1,92 @@
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flight Search</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/flights.css' %}">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="title">Flight Search</h1>
+    </header>
+    <main class="main">
+        <div class="flight-search">
+            <h2 class="section-title">Flight</h2>
+            <form action="{% url 'flights' %}" method="post" class="search-form" id="flightSearchForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="Origin">Origin</label>
+                        <input type="text" id="Origin" name="Origin" placeholder="Origin" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="Destination">Destination</label>
+                        <input type="text" id="Destination" name="Destination" placeholder="Destination" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="DepartDate">Depart Date</label>
+                        <input type="date" id="DepartDate" name="DepartDate" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="Class">Trip Type</label>
+                        <select name="TripType" id="TripType" class="form-control" onchange="toggleReturnDate()">
+                            <option value="1">Economy</option>
+                            <option value="2">Business</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="priceRange">Price Range</label>
+                        <input type="range" id="priceRange" name="priceRange" min="0" max="8000" step="500" class="form-control-range">
+                    </div>
+                </div>
+                <div class="form-group btn-center">
+                    <button type="submit" class="btn">Search</button>
+                </div>
+            </form>
+        </div>
+        <div class="flight-results">
+            <h2 class="section-title">Flight Results</h2>
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Airline</th>
+                        <th>Depart</th>
+                        <th>Arrive</th>
+                        <th>Price</th>
+                        <th>Book</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for flight in flights %}
+                    <tr>
+                        <td>{{ flight.airline }}</td>
+                        <td>{{ flight.depart }}</td>
+                        <td>{{ flight.arrive }}</td>
+                        <td>{{ flight.price }}</td>
+                        <td><a href="#" class="btn btn-book">Book</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>Copyright &copy; 2023</p>
+    </footer>
+    <script src="{% static 'js/flight.js' %}"></script>
+    <script>
+        function toggleReturnDate() {
+            const tripType = document.getElementById("TripType").value;
+            const returnDate = document.getElementById("ReturnDate");
+            if (tripType == "2") {
+                returnDate.disabled = false;
+            } else {
+                returnDate.disabled = true;
+            }
+        }
+    </script>
+</body>
+
+</html> -->

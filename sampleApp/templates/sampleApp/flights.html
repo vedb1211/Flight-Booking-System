@@ -1,0 +1,336 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flight Search</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/flights.css' %}"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <h1 class="title">Flight Search</h1>
+      <div class="home-button">
+        <a href="/">Home</a>
+      </div>
+    </header>
+    <main class="main">
+      <div class="flight-search">
+        <h2 class="section-title"></h2>
+        <form
+          action="{% url 'flights' %}"
+          method="post"
+          class="search-form"
+          id="flightSearchForm"
+        >
+          <div class="form-row">
+            <div class="form-group">
+              <label for="Origin">Origin</label>
+              <input
+                type="text"
+                id="Origin"
+                name="Origin"
+                list="cityList"
+                required
+              />
+              <datalist id="cityList">
+                <option value="Delhi"></option>
+                <option value="Mumbai"></option>
+                <option value="Bangalore"></option>
+                <option value="Chennai"></option>
+                <option value="Kochi"></option>
+                <option value="Hyderabad"></option>
+                <option value="Trivandrum"></option>
+                <option value="Kolkata"></option>
+                <option value="Ahmedabad"></option>
+                <option value="Kozhikode"></option>
+                <option value="Jaipur"></option>
+                <option value="Goa"></option>
+                <option value="Lucknow"></option>
+                <option value="Coimbatore"></option>
+                <option value="Tiruchirappalli"></option>
+                <option value="Pune"></option>
+                <option value="Bagdogra"></option>
+                <option value="Guwahati"></option>
+                <option value="Visakhapatnam"></option>
+                <option value="Amritsar"></option>
+                <option value="Madurai"></option>
+                <option value="Nagpur"></option>
+                <option value="Chandigarh"></option>
+                <option value="Jammu"></option>
+                <option value="Srinagar"></option>
+                <option value="Mangalore"></option>
+                <option value="Port Blair"></option>
+                <option value="Indore"></option>
+                <option value="Agartala"></option>
+                <option value="Patna"></option>
+              </datalist>
+            </div>
+            <div class="form-group">
+              <label for="Destination">Destination</label>
+              <input
+                type="text"
+                id="Destination"
+                name="Destination"
+                list="cityList"
+                required
+              />
+              <datalist id="cityList">
+                <option value="Delhi"></option>
+                <option value="Mumbai"></option>
+                <option value="Bangalore"></option>
+                <option value="Chennai"></option>
+                <option value="Kochi"></option>
+                <option value="Hyderabad"></option>
+                <option value="Trivandrum"></option>
+                <option value="Kolkata"></option>
+                <option value="Ahmedabad"></option>
+                <option value="Kozhikode"></option>
+                <option value="Jaipur"></option>
+                <option value="Goa"></option>
+                <option value="Lucknow"></option>
+                <option value="Coimbatore"></option>
+                <option value="Tiruchirappalli"></option>
+                <option value="Pune"></option>
+                <option value="Bagdogra"></option>
+                <option value="Guwahati"></option>
+                <option value="Visakhapatnam"></option>
+                <option value="Amritsar"></option>
+                <option value="Madurai"></option>
+                <option value="Nagpur"></option>
+                <option value="Chandigarh"></option>
+                <option value="Jammu"></option>
+                <option value="Srinagar"></option>
+                <option value="Mangalore"></option>
+                <option value="Port Blair"></option>
+                <option value="Indore"></option>
+                <option value="Agartala"></option>
+                <option value="Patna"></option>
+              </datalist>
+            </div>
+            <div class="form-group">
+              <label for="departure-date">Depart Date</label>
+              <input
+                type="date"
+                id="departure-date"
+                name="departure-date"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="Class">Trip Type</label>
+              <select name="TripType" id="TripType" class="form-control">
+                <option value="Economy">Economy</option>
+                <option value="Business">Business</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="priceRange">Price Range</label>
+              <input
+                type="range"
+                id="priceRange"
+                name="priceRange"
+                min="{{ min_price }}"
+                max="{{ max_price }}"
+                class="form-control-range"
+              />
+              <output for="priceRange" id="priceOutput"></output>
+            </div>
+          </div>
+          <div class="form-group btn-center">
+            <button type="submit" class="btn" id="flight-search-btn">
+              Search
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="flight-results">
+        <h2 class="section-title">Flight Results</h2>
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Airline</th>
+              <th>Depart</th>
+              <th>Departure Time</th>
+              <th>Arrive</th>
+              <th>Arrival Time</th>
+              <th>Price</th>
+              <th>Book</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for flight in flights %}
+            <tr>
+              <td>{{ flight.airline }}</td>
+              <td>{{ flight.dept_city_name }}</td>
+              <td>{{ flight.depart_time }}</td>
+              <td>{{ flight.arr_city_name }}</td>
+              <td>{{ flight.arrival_time }}</td>
+              <td>{{ flight.fare }}</td>
+              <td>
+                <a
+                  class="btn btn-book"
+                  onclick="bookFlight('{{ flight.airline }}', '{{ flight.dept_city_name }}', '{{ flight.depart_time }}','{{ flight.arr_city_name }}','{{ flight.arrival_time }}', '{{ flight.fare }}', '{{ flight.ID }}')"
+                  >Book</a
+                >
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <!-- <footer class="footer">
+      <p>Copyright &copy; 2023</p>
+    </footer> -->
+    <script>
+      const searchBtn = document.getElementById("flight-search-btn");
+
+      // Set initial value
+      const priceRange = document.getElementById("priceRange");
+      const priceOutput = document.getElementById("priceOutput");
+      priceOutput.textContent = priceRange.value;
+
+      window.onload = function () {
+        // Retrieve the values from localStorage
+        const tripTypeStorage = localStorage.getItem("tripType");
+        const originStorage = localStorage.getItem("origin");
+        const destinationStorage = localStorage.getItem("destination");
+        const departureDateStorage = localStorage.getItem("departureDate");
+
+        console.log(
+          tripTypeStorage,
+          originStorage,
+          destinationStorage,
+          departureDateStorage
+        );
+
+        // Populate the form fields
+        document.getElementById("TripType").value = tripTypeStorage;
+        document.getElementById("Origin").value = originStorage;
+        document.getElementById("Destination").value = destinationStorage;
+        document.getElementById("departure-date").value = departureDateStorage;
+      };
+
+      searchBtn.addEventListener("click", function () {
+        const departureDateInput =
+          document.getElementById("departure-date").value;
+        const tripType = document.querySelector("TripType").value;
+        const origin = document.getElementById("Origin").value;
+        const destination = document.getElementById("Destination").value;
+
+        console.log(departureDateInput, tripType, origin, destination);
+
+        localStorage.setItem("origin", origin);
+        localStorage.setItem("destination", destination);
+        localStorage.setItem("tripType", tripType);
+        localStorage.setItem("departureDate", departureDateInput);
+      });
+
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+          const cookies = document.cookie.split(";");
+          for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+              cookieValue = decodeURIComponent(
+                cookie.substring(name.length + 1)
+              );
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+
+      // async function sendTicketRequest(flightID) {
+      //   try {
+      //     const csrftoken = getCookie("csrftoken"); // Function to retrieve the CSRF token from cookies
+
+      //     const response = await fetch("/ticket/", {
+      //       method: "POST",
+      //       headers: {
+      //         "Content-Type": "application/json;charset=UTF-8",
+      //         "X-CSRFToken": csrftoken,
+      //       },
+      //       body: JSON.stringify({ flightID: flightID }),
+      //     });
+
+      //     if (response.status === 200) {
+      //       // Handle success if needed
+      //       console.log("Request was successful");
+      //     } else {
+      //       // Handle errors if needed
+      //       console.error("Error:", await response.text());
+      //     }
+      //   } catch (error) {
+      //     // Handle network errors or other exceptions
+      //     console.error("An error occurred:", error);
+      //   }
+      // }
+
+      function bookFlight(
+        airline,
+        depart,
+        departuretime,
+        arrive,
+        arrivaltime,
+        price,
+        flightID
+      ) {
+        // const xhr = new XMLHttpRequest();
+        // xhr.open("POST", "/ticket/"); // Replace "/booking/" with the actual URL of your view
+        // xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+        // // Include the CSRF token in the request headers
+        // const csrftoken = getCookie("csrftoken"); // Function to retrieve the CSRF token from cookies
+        // xhr.setRequestHeader("X-CSRFToken", csrftoken);
+
+        // xhr.onload = function () {
+        //   if (xhr.status === 200) {
+        //     // Handle success if needed
+        //   } else {
+        //     // Handle errors if needed
+        //     console.error("Error:", xhr.responseText);
+        //   }
+        // };
+        // const data = JSON.stringify({ flightID: flightID });
+        // xhr.send(data);
+        // sendTicketRequest(flightID);
+        localStorage.setItem("flightID", flightID);
+        localStorage.setItem("airline", airline);
+        localStorage.setItem("depart", depart);
+        localStorage.setItem("departuretime", departuretime);
+        localStorage.setItem("arrive", arrive);
+        localStorage.setItem("arrivaltime", arrivaltime);
+        localStorage.setItem("price", price);
+        window.location.href = "/booking/"; // Redirect to ticket.html page
+      }
+
+      //   function toggleReturnDate() {
+      //     const tripType = document.getElementById("TripType").value;
+      //     const returnDate = document.getElementById("ReturnDate");
+      //     if (tripType == "2") {
+      //       returnDate.disabled = false;
+      //     } else {
+      //       returnDate.disabled = true;
+      //     }
+      //   }
+
+      document
+        .getElementById("priceRange")
+        .addEventListener("input", function () {
+          const priceRange = document.getElementById("priceRange");
+          const priceOutput = document.getElementById("priceOutput");
+          priceOutput.textContent = priceRange.value; // Display the current slider value
+        });
+    </script>
+  </body>
+</html>

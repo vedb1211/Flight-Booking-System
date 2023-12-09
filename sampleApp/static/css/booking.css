@@ -1,0 +1,159 @@
+/* Your existing styles can be included here. Below are additional styles specific to this page */
+body {
+  background-image: url("background.jpg"); /* Add your image path here */
+  background-size: cover; /* Cover the entire background */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  background-attachment: fixed; /* Fixed background */
+  background-position: center center; /* Center the image */
+}
+.header {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  /* color: #dfe4e2; */
+  padding: 1em;
+}
+
+.home-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+.ticket-info {
+  text-align: center;
+}
+table {
+  width: 100%;
+  border-bottom: 1px solid #000000;
+  border-top: 1px solid #000000;
+}
+
+th,
+td {
+  padding: 10px;
+  font-weight: bold;
+}
+
+th {
+  text-align: left;
+}
+
+.personal-info,
+.passenger-info {
+  background-color: #dfe4e2;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.label,
+input,
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+
+.btn {
+  background-color: #7facdd;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #3573b7;
+}
+
+#Proceed {
+  width: 100%; /* Set the width to 100% to span the form */
+  height: 60px;
+  border: 3px solid #315cfd;
+  /* border-radius: 45px; */
+  transition: all 0.3s;
+  cursor: pointer;
+  background: white;
+  font-size: 1.2em;
+  font-weight: 550;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Proceed:hover {
+  background: #315cfd;
+  color: white;
+  font-size: 1.5em;
+}
+/* ... Your existing CSS ... */
+
+/* New Styling */
+/* .header {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 1em;
+} */
+
+.ticket-info,
+.booking-info {
+  margin: 20px;
+  padding: 20px;
+  padding-right: 5px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.contact-form,
+.passenger-form {
+  width: 40%;
+}
+
+#add-passenger {
+  background-color: #294ebc;
+  color: white;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  width: 60%;
+  margin-bottom: 10px;
+}
+
+#add-passenger:hover {
+  background-color: #315cfd;
+}
+
+#rem-passenger {
+  background-color: #294ebc;
+  color: white;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  width: 60%;
+}
+
+#rem-passenger:hover {
+  background-color: #315cfd;
+}

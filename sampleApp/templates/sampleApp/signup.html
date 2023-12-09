@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="centered-text">Sign Up</h1>
+      <div class="account-logo" id="account-dropdown">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYzrKwzB9qf6z1LUGt9CMjPzC5zBy87WL6Fw"
+          alt="Account"
+          id="account-icon"
+        />
+      </div>
+    </div>
+    <form action="/sign_in/" id="signup-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required /><br />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required /><br />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required /><br />
+
+      <input type="submit" value="Sign Up" />
+    </form>
+
+    <script src="{% static 'js/sign_up.js' %}"></script>
+  </body>
+</html>

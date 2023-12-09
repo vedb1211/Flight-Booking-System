@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <title>Ticket</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/ticket.css' %}"
+    />
+  </head>
+  <body>
+    <script src="{% static 'js/ticket.js' %}"></script>
+    <header class="header">
+      <h1>Your Ticket</h1>
+      <div class="home-button">
+        <a href="/">Home</a>
+      </div>
+    </header>
+    <main>
+      <!-- Section 1: Flight Details -->
+      <section class="flight-details">
+        <h2>Flight Details</h2>
+        <div class="flight-info">
+          <div class="depart">
+            <!-- Replace with your dynamic data -->
+          </div>
+          <div class="arrive">
+            <!-- Replace with your dynamic data -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Passenger Details -->
+      <section class="passenger-details">
+        <h2>Passenger Details</h2>
+        <div id="passenger-info"></div>
+      </section>
+
+      <!-- Section 3: Total Fare -->
+      <section class="total-fare">
+        <h2>Total Fare</h2>
+        <!-- Replace with your dynamic data -->
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <title>Ticket Details</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/booking.css' %}"
+    />
+  </head>
+
+  <body>
+    <script src="{% static 'js/booking.js' %}"></script>
+    <header class="header">
+      <h1>Ticket Details</h1>
+      <div class="home-button">
+        <a href="/">Home</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="ticket-info">
+        <!-- Replace with your dynamic data -->
+      </section>
+
+      <!-- <section class="personal-info">
+        <h2>Contact Information</h2>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+        </form>
+      </section> -->
+      <section class="booking-info">
+        <h2>Booking Information</h2>
+        <div class="info-section">
+          <form id="contactForm" class="contact-form">
+            <h3>Contact Information</h3>
+            <!-- Existing Contact Info Form -->
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required />
+              </div>
+            </form>
+          </form>
+
+          <form id="passengerForm" class="passenger-form">
+            <h3>Passenger Information</h3>
+            <!-- Passenger Info Fields -->
+            <div id="passenger-list">
+              <!-- Added passengers will appear here -->
+            </div>
+            <button type="button" id="add-passenger">Add Passenger</button>
+            <button type="button" id="rem-passenger">
+              Remove Last Passenger
+            </button>
+          </form>
+        </div>
+      </section>
+      <button type="button" id="Proceed">Proceed</button>
+    </main>
+  </body>
+</html>

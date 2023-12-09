@@ -1,0 +1,164 @@
+/* Reset some default browser styles */
+body,
+h1,
+h2,
+h3,
+p,
+form,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* General styling */
+body {
+  background-color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background-image: url(background.jpg);
+  background-size: cover; /* Cover the entire background */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  background-attachment: fixed; /* Fixed background */
+  background-position: center center; /* Center the image */
+}
+
+.header {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 1em;
+}
+
+.home-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+.main {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 80%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  min-height: 80vh;
+}
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* div[class='flight-search']{
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+div[class='flight-results']{
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+} */
+
+.search-form .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form-group {
+  flex: 1;
+  margin: 0 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+/* ... (previous code unchanged) */
+
+/* Add this to your existing CSS */
+input[type="text"],
+input[type="date"],
+select,
+input[list] {
+  /* Targets input fields that are associated with a datalist */
+  height: 43px; /* Set the height */
+  box-sizing: border-box; /* To make sure padding and border are included in the size */
+  margin-top: 3px;
+  font-size: medium;
+}
+
+input[type="range"] {
+  margin-top: 3px;
+}
+
+input[type="test"],
+input[list] {
+  padding-left: 10px;
+}
+
+/* ... (previous code unchanged) */
+
+.form-control,
+.form-control-range {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  background-color: #294ebc;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #315cfd;
+  color: white;
+}
+
+/* Flight results table */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.results-table th,
+.results-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.results-table th {
+  background-color: #294ebc;
+  color: white;
+}
+
+.results-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.btn-book {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+/* Footer */
+/* .footer {
+  background-color: #294ebc;
+  color: #dfe4e2;
+  text-align: center;
+  padding: 10px 0;
+} */
+/* ... (previous code unchanged) */
+.btn-center {
+  text-align: center;
+}
+/* ... (previous code unchanged) */
